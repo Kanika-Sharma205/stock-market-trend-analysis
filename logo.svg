@@ -1,0 +1,178 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+
+    <!-- Deep midnight navy background -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#0D1B2E"/>
+      <stop offset="55%"  stop-color="#08101C"/>
+      <stop offset="100%" stop-color="#040A12"/>
+    </linearGradient>
+
+    <!-- Top-left radial glow (subtle blue bloom) -->
+    <radialGradient id="bgBloom" cx="22%" cy="18%" r="48%">
+      <stop offset="0%"   stop-color="#163A6B" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#040A12" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Bottom-right warm gold glow (trend line direction) -->
+    <radialGradient id="bgWarm" cx="82%" cy="82%" r="40%">
+      <stop offset="0%"   stop-color="#7C4A00" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#040A12" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Trend line gradient: dim gold → bright gold → glowing white-gold -->
+    <linearGradient id="trendGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#B45309" stop-opacity="0.7"/>
+      <stop offset="45%"  stop-color="#F59E0B"/>
+      <stop offset="80%"  stop-color="#FCD34D"/>
+      <stop offset="100%" stop-color="#FEF3C7"/>
+    </linearGradient>
+
+    <!-- Volume bar fill -->
+    <linearGradient id="volGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#1D4D8C" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#0B2444" stop-opacity="0.2"/>
+    </linearGradient>
+
+    <!-- Trend glow filter -->
+    <filter id="glowTrend" x="-15%" y="-60%" width="130%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Dot glow -->
+    <filter id="glowDot" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Candle glow (subtle) -->
+    <filter id="glowCandle" x="-15%" y="-10%" width="130%" height="120%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+  </defs>
+
+  <!-- ── BACKGROUND ─────────────────────────────────────── -->
+  <rect width="512" height="512" rx="96" fill="url(#bg)"/>
+  <rect width="512" height="512" rx="96" fill="url(#bgBloom)"/>
+  <rect width="512" height="512" rx="96" fill="url(#bgWarm)"/>
+
+  <!-- ── GRID LINES (horizontal) ─────────────────────────── -->
+  <!-- 5 horizontal grid lines across chart area x=68..444, y positions: 118,178,238,298,358,398 -->
+  <line x1="68" y1="118" x2="444" y2="118" stroke="#15304E" stroke-width="1" opacity="0.55"/>
+  <line x1="68" y1="178" x2="444" y2="178" stroke="#15304E" stroke-width="1" opacity="0.55"/>
+  <line x1="68" y1="238" x2="444" y2="238" stroke="#15304E" stroke-width="1" opacity="0.55"/>
+  <line x1="68" y1="298" x2="444" y2="298" stroke="#15304E" stroke-width="1" opacity="0.55"/>
+  <line x1="68" y1="358" x2="444" y2="358" stroke="#15304E" stroke-width="1" opacity="0.55"/>
+
+  <!-- Baseline -->
+  <line x1="68" y1="398" x2="444" y2="398" stroke="#1B3E60" stroke-width="1.5" opacity="0.75"/>
+
+  <!-- Y-axis ticks (left edge) -->
+  <line x1="62" y1="118" x2="72" y2="118" stroke="#1D4570" stroke-width="1.5" opacity="0.7"/>
+  <line x1="62" y1="178" x2="72" y2="178" stroke="#1D4570" stroke-width="1.5" opacity="0.7"/>
+  <line x1="62" y1="238" x2="72" y2="238" stroke="#1D4570" stroke-width="1.5" opacity="0.7"/>
+  <line x1="62" y1="298" x2="72" y2="298" stroke="#1D4570" stroke-width="1.5" opacity="0.7"/>
+  <line x1="62" y1="358" x2="72" y2="358" stroke="#1D4570" stroke-width="1.5" opacity="0.7"/>
+
+  <!-- ── VOLUME BARS (bottom, subtle) ────────────────────── -->
+  <!-- Candle centers at: 118, 193, 268, 343, 418 -->
+  <rect x="101" y="378" width="34" height="20" rx="3" fill="url(#volGrad)"/>
+  <rect x="176" y="373" width="34" height="25" rx="3" fill="url(#volGrad)"/>
+  <rect x="251" y="370" width="34" height="28" rx="3" fill="url(#volGrad)"/>
+  <rect x="326" y="375" width="34" height="23" rx="3" fill="url(#volGrad)"/>
+  <rect x="401" y="368" width="34" height="30" rx="3" fill="url(#volGrad)"/>
+
+  <!-- ── CANDLESTICKS ─────────────────────────────────────── -->
+
+  <!-- CANDLE 1 (x=118) — BEARISH (red) -->
+  <!-- Range: wick_top=275, open=295, close=345, wick_bottom=362 -->
+  <line x1="118" y1="275" x2="118" y2="362" stroke="#F87171" stroke-width="2.5" stroke-linecap="round" filter="url(#glowCandle)"/>
+  <rect x="101" y="295" width="34" height="50" rx="4" fill="#EF4444" opacity="0.92" filter="url(#glowCandle)"/>
+  <!-- Subtle highlight on candle body left edge -->
+  <rect x="101" y="295" width="6" height="50" rx="4" fill="#F87171" opacity="0.3"/>
+
+  <!-- CANDLE 2 (x=193) — BULLISH (green) -->
+  <!-- Range: wick_top=216, open=300, close=230, wick_bottom=316 -->
+  <line x1="193" y1="216" x2="193" y2="316" stroke="#4ADE80" stroke-width="2.5" stroke-linecap="round" filter="url(#glowCandle)"/>
+  <rect x="176" y="230" width="34" height="70" rx="4" fill="#22C55E" opacity="0.92" filter="url(#glowCandle)"/>
+  <rect x="176" y="230" width="6" height="70" rx="4" fill="#4ADE80" opacity="0.3"/>
+
+  <!-- CANDLE 3 (x=268) — BULLISH (green) -->
+  <!-- Range: wick_top=162, open=255, close=180, wick_bottom=272 -->
+  <line x1="268" y1="162" x2="268" y2="272" stroke="#4ADE80" stroke-width="2.5" stroke-linecap="round" filter="url(#glowCandle)"/>
+  <rect x="251" y="180" width="34" height="75" rx="4" fill="#22C55E" opacity="0.92" filter="url(#glowCandle)"/>
+  <rect x="251" y="180" width="6" height="75" rx="4" fill="#4ADE80" opacity="0.3"/>
+
+  <!-- CANDLE 4 (x=343) — BEARISH (red) — consolidation candle -->
+  <!-- Range: wick_top=138, open=158, close=208, wick_bottom=224 -->
+  <line x1="343" y1="138" x2="343" y2="224" stroke="#F87171" stroke-width="2.5" stroke-linecap="round" filter="url(#glowCandle)"/>
+  <rect x="326" y="158" width="34" height="50" rx="4" fill="#EF4444" opacity="0.92" filter="url(#glowCandle)"/>
+  <rect x="326" y="158" width="6" height="50" rx="4" fill="#F87171" opacity="0.3"/>
+
+  <!-- CANDLE 5 (x=418) — BULLISH (green) — strong breakout -->
+  <!-- Range: wick_top=92, open=196, close=112, wick_bottom=205 -->
+  <line x1="418" y1="92" x2="418" y2="205" stroke="#4ADE80" stroke-width="2.5" stroke-linecap="round" filter="url(#glowCandle)"/>
+  <rect x="401" y="112" width="34" height="84" rx="4" fill="#22C55E" opacity="0.95" filter="url(#glowCandle)"/>
+  <rect x="401" y="112" width="6" height="84" rx="4" fill="#4ADE80" opacity="0.4"/>
+
+  <!-- ── TREND LINE ─────────────────────────────────────── -->
+  <!-- Connects the candle lows on an upward trend: (68,370) → (444,100) -->
+
+  <!-- Outer glow pass -->
+  <line x1="68" y1="370" x2="444" y2="100"
+        stroke="#F59E0B" stroke-width="14"
+        stroke-linecap="round" opacity="0.12" filter="url(#glowTrend)"/>
+
+  <!-- Mid glow pass -->
+  <line x1="68" y1="370" x2="444" y2="100"
+        stroke="#FBBF24" stroke-width="6"
+        stroke-linecap="round" opacity="0.25"/>
+
+  <!-- Main trend line -->
+  <line x1="68" y1="370" x2="438" y2="103"
+        stroke="url(#trendGrad)" stroke-width="3.5"
+        stroke-linecap="round" filter="url(#glowTrend)"/>
+
+  <!-- Arrowhead at tip (pointing upper-right) -->
+  <!-- Line angle: atan2(100-370, 444-68) = atan2(-270, 376) ≈ -35.7° from horizontal -->
+  <!-- Arrowhead tip at (444, 100), rotate -->
+  <g transform="translate(441, 101) rotate(-35.7)">
+    <polygon points="0,-11 9,7 -9,7" fill="#FCD34D" opacity="0.95"/>
+  </g>
+
+  <!-- ── TREND DOT MARKERS at candle intersections ─────── -->
+  <!-- Dot glow on each candle where trend line roughly passes -->
+  <!-- Candle 1 trend y ≈ 349: pos (118, 349) -->
+  <circle cx="118" cy="349" r="6" fill="#F59E0B" opacity="0.85" filter="url(#glowDot)"/>
+  <circle cx="118" cy="349" r="3" fill="#FEF08A"/>
+
+  <!-- Candle 2 trend y ≈ 277: pos (193, 277) -->
+  <circle cx="193" cy="277" r="6" fill="#F59E0B" opacity="0.85" filter="url(#glowDot)"/>
+  <circle cx="193" cy="277" r="3" fill="#FEF08A"/>
+
+  <!-- Candle 3 trend y ≈ 205: pos (268, 205) -->
+  <circle cx="268" cy="205" r="6" fill="#F59E0B" opacity="0.85" filter="url(#glowDot)"/>
+  <circle cx="268" cy="205" r="3" fill="#FEF08A"/>
+
+  <!-- Candle 4 trend y ≈ 133: pos (343, 133) -->
+  <circle cx="343" cy="133" r="6" fill="#F59E0B" opacity="0.85" filter="url(#glowDot)"/>
+  <circle cx="343" cy="133" r="3" fill="#FEF08A"/>
+
+  <!-- Candle 5 trend y ≈ 105: pos (418, 105) -->
+  <circle cx="418" cy="105" r="7" fill="#FBBF24" opacity="0.9" filter="url(#glowDot)"/>
+  <circle cx="418" cy="105" r="3.5" fill="#FFFBEB"/>
+
+</svg>

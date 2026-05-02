@@ -1,0 +1,9 @@
+Model: LightGBM
+              precision    recall  f1-score   support
+
+        DOWN       0.46      0.67      0.55       332
+          UP       0.53      0.32      0.40       379
+
+    accuracy                           0.49       711
+   macro avg       0.50      0.50      0.47       711
+weighted avg       0.50      0.49      0.47       711

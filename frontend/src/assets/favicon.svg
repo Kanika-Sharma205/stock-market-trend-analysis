@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+
+    <!-- Trend line gradient -->
+    <linearGradient id="fTrend" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#B45309"/>
+      <stop offset="60%"  stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#FDE68A"/>
+    </linearGradient>
+
+    <!-- Volume gradient -->
+    <linearGradient id="fVol" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#2563EB" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#1E3A8A" stop-opacity="0.1"/>
+    </linearGradient>
+
+  </defs>
+
+  <!-- White background with very subtle warm border -->
+  <rect width="64" height="64" rx="10" fill="#FAFAFA"/>
+  <rect width="64" height="64" rx="10" fill="none" stroke="#E2E8F0" stroke-width="1"/>
+
+  <!-- ── GRID (very light) -->
+  <line x1="8"  y1="16" x2="56" y2="16" stroke="#CBD5E1" stroke-width="0.6" opacity="0.6"/>
+  <line x1="8"  y1="28" x2="56" y2="28" stroke="#CBD5E1" stroke-width="0.6" opacity="0.6"/>
+  <line x1="8"  y1="40" x2="56" y2="40" stroke="#CBD5E1" stroke-width="0.6" opacity="0.6"/>
+  <line x1="8"  y1="50" x2="56" y2="50" stroke="#94A3B8" stroke-width="0.8" opacity="0.7"/>
+
+  <!-- ── VOLUME BARS -->
+  <rect x="10"  y="46" width="7"  height="4" rx="1" fill="url(#fVol)"/>
+  <rect x="24"  y="44" width="7"  height="6" rx="1" fill="url(#fVol)"/>
+  <rect x="38"  y="43" width="7"  height="7" rx="1" fill="url(#fVol)"/>
+  <rect x="52"  y="42" width="7"  height="8" rx="1" fill="url(#fVol)"/>
+
+  <!-- ── CANDLESTICK 1 (x=13) BEARISH -->
+  <line x1="13" y1="23" x2="13" y2="45" stroke="#EF4444" stroke-width="1.4" stroke-linecap="round"/>
+  <rect x="9"   y="30" width="8" height="12" rx="1.5" fill="#EF4444"/>
+
+  <!-- ── CANDLESTICK 2 (x=27) BULLISH -->
+  <line x1="27" y1="18" x2="27" y2="40" stroke="#22C55E" stroke-width="1.4" stroke-linecap="round"/>
+  <rect x="23"  y="22" width="8" height="14" rx="1.5" fill="#22C55E"/>
+
+  <!-- ── CANDLESTICK 3 (x=41) BULLISH -->
+  <line x1="41" y1="12" x2="41" y2="34" stroke="#22C55E" stroke-width="1.4" stroke-linecap="round"/>
+  <rect x="37"  y="15" width="8" height="15" rx="1.5" fill="#22C55E"/>
+
+  <!-- ── CANDLESTICK 4 (x=55) BULLISH — strong -->
+  <line x1="55" y1="9"  x2="55" y2="28"  stroke="#22C55E" stroke-width="1.4" stroke-linecap="round"/>
+  <rect x="51"  y="11" width="8" height="14" rx="1.5" fill="#22C55E"/>
+
+  <!-- ── TREND LINE -->
+  <!-- Glow -->
+  <line x1="8"  y1="48" x2="56" y2="11"
+        stroke="#F59E0B" stroke-width="4" stroke-linecap="round" opacity="0.18"/>
+  <!-- Line -->
+  <line x1="8"  y1="48" x2="55" y2="11"
+        stroke="url(#fTrend)" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- Arrowhead tip -->
+  <g transform="translate(55,11) rotate(-37)">
+    <polygon points="0,-5 4,3 -4,3" fill="#FCD34D"/>
+  </g>
+
+  <!-- Trend dots -->
+  <circle cx="13" cy="42" r="1.8" fill="#F59E0B"/>
+  <circle cx="27" cy="33" r="1.8" fill="#F59E0B"/>
+  <circle cx="41" cy="24" r="1.8" fill="#F59E0B"/>
+  <circle cx="55" cy="14" r="2"   fill="#FBBF24"/>
+
+</svg>

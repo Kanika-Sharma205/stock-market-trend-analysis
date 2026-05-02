@@ -1,0 +1,17 @@
+feature,importance
+macd_hist,0.10310548
+macd,0.07415235
+ma5_dist,0.0694298
+atr14,0.066814214
+obv_change,0.065526485
+bb_position,0.06544502
+bb_width,0.0647462
+day_of_week,0.060231533
+ma_cross_strength,0.059862424
+return,0.059150312
+volume,0.056944206
+signal,0.053585388
+volume_change,0.053133983
+rsi14,0.051043328
+body_ratio,0.049269825
+ma20_dist,0.04755942
