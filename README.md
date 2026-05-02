@@ -1,8 +1,8 @@
 <div align="center">
 
-<img src="logo.svg" alt="MarketPulse" width="380" />
+<img src="logo.svg" alt="MarketPulse" width="90" />
 
-<br/><br/>
+<br/>
 
 # MarketPulse
 
