@@ -18,7 +18,7 @@ jobs:
       - name: Push to HF
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: git push --force https://Kanika-Sharma:$HF_TOKEN@https://huggingface.co/spaces/Kanika-Sharma/MarketPulse_Stock-Market-Trend-Analysis main
+        run: git push --force https://Kanika-Sharma:$HF_TOKEN@huggingface.co/spaces/Kanika-Sharma/MarketPulse_Stock-Market-Trend-Analysis main
 
   # Job 2: Ping the URL (This prevents the 48-hour sleep)
   keep-alive:

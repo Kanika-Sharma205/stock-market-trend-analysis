@@ -1,3 +1,13 @@
+---
+title: MarketPulse Stock-Market-Trend-Analysis
+emoji: 🦀
+colorFrom: indigo
+colorTo: gray
+sdk: docker
+pinned: false
+license: mit
+---
+
 <div align="center">
 
 <img src="logo.svg" alt="MarketPulse" width="90" />
