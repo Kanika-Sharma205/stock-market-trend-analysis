@@ -9,21 +9,23 @@ license: mit
 ---
 
 <div align="center">
+  <img src="frontend/public/logo.svg" alt="FakeGuard AI Logo" width="90" />
+    <h1>MarketPlace AI</h1>
+    <p><strong>Stock Market Trend Analysis — Predicting next-day AAPL price direction using ML ensembles and a CNN + LSTM + Attention deep learning pipeline, with a full-stack web dashboard.</strong></p>
 
-<img src="logo.svg" alt="MarketPulse" width="90" />
+  <p>
+    <img src="https://img.shields.io/badge/Python-3.12-blue?logo=python&logoColor=white" />
+    <img src="https://img.shields.io/badge/Accuracy-56%25-brightgreen" />
+    <img src="https://img.shields.io/badge/TensorFlow-2.x-FF6F00?style=flat&logo=tensorflow&logoColor=white">
+    <img src="https://img.shields.io/badge/FastAPI-0.111-009688?style=flat&logo=fastapi&logoColor=white">
+    <img src="https://img.shields.io/badge/scikit--learn-1.x-F7931E?style=flat&logo=scikit-learn&logoColor=white">
+    <img src="https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=black" />
+    <img src="https://img.shields.io/badge/FastAPI-0.136-009688?logo=fastapi&logoColor=white" />
+    <img src="https://img.shields.io/badge/Deployment-Hugging%20Face-blue?logo=huggingface">
+  </p>
 
-<br/>
-
-# MarketPulse
-
-### Stock Market Trend Analysis — Predicting next-day AAPL price direction using ML ensembles and a CNN + LSTM + Attention deep learning pipeline, with a full-stack web dashboard.
-
-[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat&logo=python&logoColor=white)](https://python.org)
-[![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-FF6F00?style=flat&logo=tensorflow&logoColor=white)](https://tensorflow.org)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.111-009688?style=flat&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
-[![React](https://img.shields.io/badge/React-18-61DAFB?style=flat&logo=react&logoColor=black)](https://react.dev)
-[![scikit-learn](https://img.shields.io/badge/scikit--learn-1.x-F7931E?style=flat&logo=scikit-learn&logoColor=white)](https://scikit-learn.org)
-
+  <!-- ✏️  Replace the # below with your real deployed URL once hosted -->
+  <h3><a href="https://kanika-sharma-marketpulse-stock-market-trend-analysis.hf.space">🌐 Live Demo →</a></h3>
 </div>
 
 ---
