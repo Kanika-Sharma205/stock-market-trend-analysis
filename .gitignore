@@ -2,3 +2,14 @@
 node_modules
 dist
 .vscode
+__pycache__/
+**/*__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
+ENV/
+
+# FastAPI / Pydantic
+.env

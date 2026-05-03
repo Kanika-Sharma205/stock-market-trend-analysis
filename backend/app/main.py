@@ -1,6 +1,9 @@
+import os
 import logging
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 from app.routers import metrics, predict
 
 logging.basicConfig(level=logging.INFO)
@@ -21,10 +24,10 @@ app.add_middleware(
 app.include_router(metrics.router, prefix="/api")
 app.include_router(predict.router, prefix="/api")
 
-
-@app.get("/")
-def root():
+@app.get("/health")
+def health():
     return {
+        "status": "ok",
         "message": "MarketPulse API",
         "docs":    "/docs",
         "endpoints": {
@@ -32,9 +35,8 @@ def root():
             "dl_metrics":  "/api/metrics/dl",
             "dl_predict":  "/api/predict/dl  (POST {ticker: 'AAPL'})",
         },
-    }
+        }
 
-
-@app.get("/health")
-def health():
-    return {"status": "ok"}
+static_dir = os.path.join(os.path.dirname(__file__), "static")
+if os.path.exists(static_dir):
+    app.mount("/", StaticFiles(directory=static_dir, html=True), name="static")
