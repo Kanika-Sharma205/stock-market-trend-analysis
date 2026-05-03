@@ -1,0 +1,28 @@
+name: Sync and Keep Alive
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "0 0 * * *" # Runs every day at midnight to prevent sleep mode
+
+jobs:
+  # Job 1: Sync code to Hugging Face (This gives you the Green Tick)
+  deploy:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push'
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          lfs: true
+      - name: Push to HF
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: git push --force https://Kanika-Sharma:$HF_TOKEN@https://huggingface.co/spaces/Kanika-Sharma/MarketPulse_Stock-Market-Trend-Analysis main
+
+  # Job 2: Ping the URL (This prevents the 48-hour sleep)
+  keep-alive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wake up Hugging Face Space
+        run: curl -I https://huggingface.co/spaces/Kanika-Sharma/MarketPulse_Stock-Market-Trend-Analysis
