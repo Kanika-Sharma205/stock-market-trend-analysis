@@ -150,9 +150,9 @@ Stock_Market_Trend_Analysis/
 │
 ├── training/← All research notebooks & raw data
 |   ├── notebooks
-│   │   ├── Chapter 0: Feature Extraction From Dataset/ ← Raw OHLCV + base 19-feature extraction
-│   │   ├── Chapter 1: Analysis using ML Models/          ← ML data prep, training, visualisations
-│   │   └── Chapter 2: Analysis using DL Models/          ← DL data prep, model, checkpoints, evaluation
+│   │   ├── Chapter_0_Feature_Extraction_From_Dataset/ ← Raw OHLCV + base 19-feature extraction
+│   │   ├── Chapter_1_Analysis_using_ML_Models/          ← ML data prep, training, visualisations
+│   │   └── Chapter_2_Analysis_using_DL_Models/          ← DL data prep, model, checkpoints, evaluation
 │   └── presentations
 |       └── StockPricePrediction.pptx
 |
@@ -625,29 +625,29 @@ npm run dev
 
 ### Running Training Notebooks
 
-The research notebooks are in `training/`. Run them in order:
+The research notebooks are in `training/notebooks`. Run them in order:
 
 ```bash
 # Install Jupyter if needed
 pip install jupyter
 
 # Chapter 0 — Extract features from raw OHLCV
-jupyter notebook training/chapter0_feature_extraction/Feature_Extraction.ipynb
+jupyter notebook training/notebooks/Chapter_0_Feature_Extraction_From_Dataset/Chapter_0_Feature_Extraction.ipynb
 
 # Chapter 1A — ML data preparation and EDA
-jupyter notebook training/chapter1_ml_models/Data_Preparation_ML.ipynb
+jupyter notebook training/notebooks/Chapter_1_Analysis_using_ML_Models/Chapter_1A_Data_Preperation_For_ML_Models.ipynb
 
 # Chapter 1B — Train Random Forest, XGBoost, LightGBM
-jupyter notebook training/chapter1_ml_models/Training_ML_Models.ipynb
+jupyter notebook training/notebooks/Chapter_1_Analysis_using_ML_Models/Chapter_1B_Training_ML_Models.ipynb
 
 # Chapter 2A — DL feature engineering and windowing
-jupyter notebook training/chapter2_dl_models/Data_Preparation_DL.ipynb
+jupyter notebook training/notebooks/Chapter_2_Analysis_using_DL_Models/Chapter_2A_Data_Preperation_For_DL_Models.ipynb
 
 # Chapter 2B — Build and train CNN + LSTM + Attention
-jupyter notebook training/chapter2_dl_models/Model_Architecture_Training.ipynb
+jupyter notebook training/notebooks/Chapter_2_Analysis_using_DL_Models/Chapter_2B_Model_Architecture_and_Training.ipynb
 
 # Chapter 2C — Evaluation, threshold tuning, saliency analysis
-jupyter notebook training/chapter2_dl_models/Evaluation_Analysis.ipynb
+jupyter notebook training/notebooks/Chapter_2_Analysis_using_DL_Models/Chapter_2C_Evaluation_and_Analysis.ipynb
 ```
 
 ---
